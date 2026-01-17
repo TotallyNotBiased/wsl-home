@@ -9,6 +9,7 @@
   home.packages = (with pkgs; [
     fastfetch
     nerd-fonts.jetbrains-mono
+    gh
   ]);
 
   programs.nixvim = {
