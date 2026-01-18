@@ -10,6 +10,7 @@
     fastfetch
     nerd-fonts.jetbrains-mono
     gh
+    git-filter-repo
   ]);
 
   programs.nixvim = {
