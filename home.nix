@@ -27,6 +27,19 @@
       telescope.enable = true;
       web-devicons.enable = true;
       treesitter.enable = true;
+
+      lsp = {
+        enable = true;
+	servers = {
+	  rust_analyzer = {
+	    enable = true;
+	    installCargo = true;
+	    installRustc = true;
+	  };
+
+	  nil_ls.enable = true;
+	};
+      };
     };
 
     opts = {
