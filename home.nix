@@ -8,6 +8,7 @@
 
   home.packages = (with pkgs; [
     fastfetch
+    xeyes
     nerd-fonts.jetbrains-mono
     gh
     git-filter-repo
