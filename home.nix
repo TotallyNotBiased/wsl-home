@@ -40,7 +40,48 @@
 	  nil_ls.enable = true;
 	};
       };
+
+      cmp = {
+        enable = true;
+	autoEnableSources = true;
+	settings = {
+	  sources = [
+	    { name = "nvim_lsp"; }
+	    { name = "path"; }
+	    { name = "buffer"; }
+	  ];
+	  mapping = {
+	    "<Tab>" = "cmp.mapping(cmp.mapping.select_next_item(), {'i', 's'})";
+	    "<CR>" = "cmp.mapping.confirm({ select = true })";
+	  };
+	};
+      };
     };
+
+    keymaps = [
+      {
+	key = "gd";
+	action = "<cmd>lua vim.lsp.buf.definition()<CR>";
+	options.desc = "Go to Definition";
+      }
+      {
+	key = "K";
+	action = "<cmd>lua vim.lsp.buf.hover()<CR>";
+	options.desc = "Hover Documentation";
+      }
+      {
+	key = "<leader>ca";
+	action = "<cmd>lua vim.lsp.buf.code_action()<CR>";
+	options.desc = "Code Action";
+      }
+      {
+	key = "<leader>rn";
+	action = "<cmd>lua vim.lsp.buf.rename()<CR>";
+	options.desc = "Rename Symbol";
+      }
+    ];
+
+    globals.mapleader = " ";
 
     opts = {
       number = true;
