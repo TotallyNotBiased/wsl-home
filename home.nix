@@ -125,6 +125,11 @@
 	action = ":lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())<CR>";
 	options.desc = "Toggle Inlay Hints";
       }
+      {
+	key = "<leader>ff";
+	action = "<cmd>Telescope find_files<CR>";
+	options.desc = "Telescope Finder";
+      }
     ];
 
     globals.mapleader = " ";
