@@ -90,6 +90,7 @@
     };
 
     keymaps = [
+      # LSP keymaps
       {
 	key = "gd";
 	action = "<cmd>lua vim.lsp.buf.definition()<CR>";
@@ -111,6 +112,12 @@
 	options.desc = "Rename Symbol";
       }
       {
+	key = "<leader>h";
+	action = ":lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())<CR>";
+	options.desc = "Toggle Inlay Hints";
+      }
+      # Plugin keymaps
+      {
 	key = "<leader>e";
 	action = "<cmd>Neotree toggle<CR>";
 	options.desc = "Toggle Explorer";
@@ -121,9 +128,10 @@
 	options.desc = "Toggle Terminal";
       }
       {
-	key = "<leader>h";
-	action = ":lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())<CR>";
-	options.desc = "Toggle Inlay Hints";
+	mode = "t";
+	key = "<Esc>";
+	action = "<C-\\><C-n>";
+	options.desc = "Exit terminal mode to Normal mode";
       }
       {
 	key = "<leader>ff";
