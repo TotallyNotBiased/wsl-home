@@ -74,20 +74,17 @@
 
       neo-tree = {
 	enable = true;
-	closeIfLastWindow = true; # Close vim if only the tree is left
+	close_if_last_window = true; 
 	window = {
-	  width = 30; # Set the width of the sidebar
-	  autoExpandWidth = true;
+	  settings.width = 30;
+	  auto_expand_width = true;
 	};
       };
 
       toggleterm = {
 	enable = true;
 	settings = {
-	  direction = "float"; # 'vertical', 'horizontal', 'tab', or 'float'
-	  float_opts = {
-	    border = "curved";
-	  };
+	  direction = "horizontal"; # 'vertical', 'horizontal', 'tab', or 'float'
 	};
       };
     };
