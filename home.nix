@@ -20,6 +20,7 @@
     vimAlias = true;
 
     colorschemes.catppuccin.enable = true;
+    web-devicons.enable = true;
 
     plugins = {
       lualine.enable = true;
@@ -70,6 +71,25 @@
 	  };
 	};
       };
+
+      neo-tree = {
+	enable = true;
+	closeIfLastWindow = true; # Close vim if only the tree is left
+	window = {
+	  width = 30; # Set the width of the sidebar
+	  autoExpandWidth = true;
+	};
+      };
+
+      toggleterm = {
+	enable = true;
+	settings = {
+	  direction = "float"; # 'vertical', 'horizontal', 'tab', or 'float'
+	  float_opts = {
+	    border = "curved";
+	  };
+	};
+      };
     };
 
     keymaps = [
@@ -92,6 +112,21 @@
 	key = "<leader>rn";
 	action = "<cmd>lua vim.lsp.buf.rename()<CR>";
 	options.desc = "Rename Symbol";
+      }
+      {
+	key = "<leader>e";
+	action = "<cmd>Neotree toggle<CR>";
+	options.desc = "Toggle Explorer";
+      }
+      {
+	key = "<leader>t";
+	action = "<cmd>ToggleTerm<CR>";
+	options.desc = "Toggle Terminal";
+      }
+      {
+	key = "<leader>h";
+	action = ":lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())<CR>";
+	options.desc = "Toggle Inlay Hints";
       }
     ];
 
