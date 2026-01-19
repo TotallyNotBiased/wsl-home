@@ -8,7 +8,6 @@
 
   home.packages = (with pkgs; [
     fastfetch
-    xeyes
     nerd-fonts.jetbrains-mono
     gh
     git-filter-repo
@@ -27,6 +26,7 @@
       telescope.enable = true;
       web-devicons.enable = true;
       treesitter.enable = true;
+      lsp-lines.enable = true;
 
       lsp = {
         enable = true;
