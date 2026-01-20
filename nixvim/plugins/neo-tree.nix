@@ -1,5 +1,5 @@
 {  
-  neo-tree = {
+  programs.nixvim.plugins.neo-tree = {
     enable = true;
     close_if_last_window = true; 
     window = {

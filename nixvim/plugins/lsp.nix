@@ -26,7 +26,7 @@
     };
   };
 
-  autoCmd = [
+  programs.nixvim.autoCmd = [
     {
       event = [ "LspAttach" ];
       callback = {
