@@ -24,6 +24,7 @@
         modules = [ 
           ./home.nix 
           nixvim.homeModules.nixvim
+	  ./nixvim
         ];
       };
     };
