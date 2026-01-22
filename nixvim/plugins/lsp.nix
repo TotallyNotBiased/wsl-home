@@ -18,6 +18,7 @@
 	    chainingHints = { enable = true; };
 	    parameterHints = { enable = true; };
 	    closureReturnTypeHints = { enable = "always"; };
+
 	  };
 	};
       };
