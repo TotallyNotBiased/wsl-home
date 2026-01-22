@@ -7,6 +7,8 @@
 	installCargo = false;
 	installRustc = false;
 
+        cmd = [ "rust-analyzer" ];
+
 	settings = {
 	  inlayHints = {
 	    bindingModeHints = { enable = true; };
