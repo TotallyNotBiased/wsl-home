@@ -11,13 +11,13 @@
 	  inlayHints = {
 	    bindingModeHints = { enable = true; };
 	    typeHints = {
-	      enable = true;
+	      enable = false;
 	      hideClosureInitialization = false;
 	      hideNamedConstructor = false;
 	    };
 	    chainingHints = { enable = true; };
 	    parameterHints = { enable = true; };
-	    closureReturnTypeHints = { enable = "always"; };
+	    closureReturnTypeHints = { enable = "never"; };
 
 	  };
 	};
