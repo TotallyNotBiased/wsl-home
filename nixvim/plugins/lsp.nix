@@ -23,6 +23,10 @@
 	};
       };
 
+      clangd = {
+        enable = true;
+      };
+
       nil_ls.enable = true;
     };
   };
