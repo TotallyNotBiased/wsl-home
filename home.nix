@@ -71,6 +71,56 @@
     };
   };
 
+  programs.tmux = {
+    enable = true;
+    prefix = "C-a";
+    baseIndex = 1;
+    escapeTime = 0;
+    historyLimit = 10000;
+    keyMode = "vi";
+    mouse = true;
+
+    plugins = with pkgs.tmuxPlugins; [
+      vim-tmux-navigator
+      {
+        plugin = catppuccin;
+        extraConfig = ''
+          set -g @catppuccin_flavour 'mocha'
+        '';
+      }
+      {
+        plugin = resurrect;
+        extraConfig = ''
+          set -g @resurrect-capture-pane-contents 'on'
+        '';
+      }
+      {
+        plugin = continuum;
+        extraConfig = ''
+          set -g @continuum-restore 'on'
+        '';
+      }
+    ];
+
+    extraConfig = ''
+      set -g default-terminal "tmux-256color"
+      set -ag terminal-overrides ",xterm-256color:RGB"
+
+      bind v split-window -h -c "#{pane_current_path}"
+      bind s split-window -v -c "#{pane_current_path}"
+
+      bind c new-window -c "#{pane_current_path}"
+
+      bind-key j switch-client -n
+      bind-key k switch-client -p
+
+      # Visual selection and yank like vim in copy mode
+      bind-key -T copy-mode-vi v send-keys -X begin-selection
+      bind-key -T copy-mode-vi y send-keys -X copy-selection-and-cancel
+    '';
+  };
+
+
   home.file = {
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
